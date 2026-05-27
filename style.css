@@ -150,17 +150,84 @@ nav.scrolled {
 
 nav.scrolled .container { padding: 0; }
 
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-.nav-left { display: flex; justify-content: flex-start; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; position: relative; }
+.nav-left { display: flex; justify-content: flex-start; z-index: 101; }
 .logo-link { display: flex; align-items: center; height: 100%; }
 .logo-img { height: 45px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
 .logo-link:hover .logo-img { transform: scale(1.05); }
-
 .nav-links { display: flex; justify-content: center; gap: 30px; color: var(--text-main); font-weight: 600; }
 .nav-links a:hover { color: var(--blue-bright); text-shadow: 0 0 8px rgba(0, 229, 255, 0.5); }
 
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+.nav-links { display: flex; justify-content: center; gap: 30px; color: var(--text-main); font-weight: 600; }
+.nav-links a:hover { color: var(--blue-bright); text-shadow: 0 0 8px rgba(0, 229, 255, 0.5); }
 .nav-actions { display: flex; justify-content: flex-end; gap: 15px; align-items: center; }
 .btn-sm { padding: 8px 20px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+
+.nav-actions { display: flex; justify-content: flex-end; gap: 15px; align-items: center; }
+.btn-sm { padding: 8px 20px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+    z-index: 101; /* Memastikan hamburger di atas menu dropdown */
+}
+
+/* --- RESPONSIVITAS NAVBAR UNTUK HP --- */
+@media (max-width: 992px) {
+    .hamburger { 
+        display: block; 
+    }
+    
+    /* Mengubah menu memanjang menjadi kotak Dropdown */
+    .nav-menu {
+        position: absolute;
+        top: 75px; /* Tampil tepat di bawah kapsul navbar */
+        left: 0;
+        right: 0;
+        background: rgba(10, 20, 45, 0.95);
+        backdrop-filter: blur(15px);
+        border: 1px solid var(--blue-bright);
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 30px 25px;
+        gap: 25px;
+        box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
+        
+        /* Menu disembunyikan secara default */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Saat menu diklik dan diberi kelas 'active' dari JavaScript */
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links { flex-direction: column; align-items: center; gap: 20px; width: 100%; }
+    .nav-actions { flex-direction: column; width: 100%; gap: 15px; }
+    .nav-actions .btn-sm { width: 100%; justify-content: center; }
+    .btn-theme { margin: 0 auto; }
+}
+
+/* --- PENYESUAIAN MENU HP UNTUK LIGHT MODE --- */
+@media (max-width: 992px) {
+    body.light-mode .nav-menu {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+    }
+    body.light-mode .hamburger {
+        color: var(--text-main);
+    }
+}
 
 /* --- 4. HERO SECTION --- */
 .hero {
