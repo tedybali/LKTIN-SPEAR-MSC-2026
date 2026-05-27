@@ -212,3 +212,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// === FITUR HAMBURGER MENU (KHUSUS MOBILE) ===
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navItemLinks = document.querySelectorAll('.nav-item-link');
+
+    if (hamburger && navMenu) {
+        // Buka/Tutup menu saat hamburger diklik
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Tutup menu otomatis setelah salah satu link diklik (Biar layar kembali lega)
+        navItemLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+});
