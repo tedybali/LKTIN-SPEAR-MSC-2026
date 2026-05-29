@@ -40,11 +40,10 @@ body::before {
     background-repeat: no-repeat;
     
     opacity: 0.12; 
-    
-    mix-blend-mode: screen; 
-    
+
     z-index: -1;
     pointer-events: none;
+    will-change: transform;
 }
 
 * {
