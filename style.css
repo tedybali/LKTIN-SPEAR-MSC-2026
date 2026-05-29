@@ -23,7 +23,7 @@
     --text-main: #F8FAFC;   /* Putih untuk teks paragraf */
     --text-muted: #94A3B8;  /* Abu-abu kebiruan untuk subtitle */
     
-    --blur-val: 16px;
+    --blur-val: 8px;
 }
 
 body::before {
