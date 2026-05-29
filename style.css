@@ -1,4 +1,4 @@
-/* --- 1. RESET & VARIABLE (DARK TECH MODE) --- */
+/* --- 1. RESET & VARIABLE --- */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
 :root {
     /* Backgrounds: Deep Navy / Space Blue dari Poster */
@@ -638,6 +638,14 @@ nav.scrolled .container { padding: 0; }
     filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 25px rgba(0, 229, 255, 0.5));
 }
 @media (max-width: 768px) {
+    body::before{
+        opacity: 0.08;
+        background-position: center center;
+    }
+    
+    body.light-mode::before{
+        opacity: 0.15;
+    }
 
     .sponsor-img.logo-utama {
         max-width: 180px;
