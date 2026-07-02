@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spearmsc26.xyz/sitemap.xml
