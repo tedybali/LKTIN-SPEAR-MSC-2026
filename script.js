@@ -211,6 +211,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// PENGUMUMAN MARQUEE (H-3 PENDAFTARAN ABSTRAK)
+document.addEventListener('DOMContentLoaded', () => {
+    const announcementBar = document.getElementById('announcement-bar');
+    const closeBtn = document.getElementById('announcement-close');
+
+    if (announcementBar && closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            document.body.classList.add('announcement-closed');
+        });
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
