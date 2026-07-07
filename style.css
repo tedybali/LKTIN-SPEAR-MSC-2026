@@ -97,6 +97,16 @@ ul { list-style: none; }
     box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
 }
 
+.btn-disabled {
+    background: rgba(148, 163, 184, 0.15);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.75;
+    pointer-events: none;
+}
+
 .btn-glass {
     background: rgba(0, 229, 255, 0.05);
     border: 1px solid var(--blue-bright);
@@ -464,6 +474,7 @@ body.announcement-closed .hero {
 .reg-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
 .reg-title { font-family: 'Poppins', sans-serif; font-size: 1.8rem; color: var(--text-main); font-weight: 700; }
 .reg-price { font-size: 1.5rem; font-weight: 800; color: var(--blue-bright); }
+.reg-price-closed { color: var(--text-muted); font-size: 1.1rem; }
 .reg-date { font-size: 0.95rem; color: var(--blue-light); margin-bottom: 20px; font-weight: 600; }
 .reg-waves { list-style: none; margin-bottom: 20px; }
 .reg-waves li { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border-color); color: var(--text-main); }
